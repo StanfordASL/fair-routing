@@ -20,7 +20,7 @@ paths_ = paths_.iloc[2:]
 paths_ = paths_[0].str.split(',', 2, expand = True)
 paths_arr = np.array(paths_)
 
-weights = pd.read_csv('Locations/SiouxFalls/result_so/weights.csv', skiprows = 1)
+weights = pd.read_csv(sys.argv[4], skiprows = 1)
 weights_arr = np.array(weights)
 
 #Check if weight is at least 1/10th of the maximum weight
@@ -58,7 +58,12 @@ flow_arr = flow_arr[flow_arr[:,-1].argsort()]
 x_sol = flow_arr[:, 6]
 x_sol = np.array([float(i) for i in x_sol])
 
-print(x_sol)
+#Store the flow cost
+cost_sol = flow_arr[:, 6]
+cost_sol = np.array([float(i) for i in x_sol])
+
+
+#print(x_sol)
 
 #Define the link latency functions
 def link_latency(a_val, power_val, link_ff_cost, link_capacity, link_flow):
@@ -98,6 +103,7 @@ for OD_pair in range(int(paths_arr[-1, 1])):
         path_tt = 0
         for edge_values in all_edges:
             list_edges.append(edge_values)
+            #path_tt += cost_sol[edge_values]
             path_tt += link_latency(0.15, 4, int(flow_arr[edge_values, 3]),  edges_arr[edge_values, 3], x_sol[edge_values])
 
         OD_tt_paths.append(path_tt)

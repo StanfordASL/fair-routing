@@ -21,7 +21,7 @@ class SolutionImplementations():
             main_zip_loc = 'Alpha_Objective/' + city_name + '/'
             edges_file = 'Locations/' + city_name + '/edges.csv'
             new_folder = 'Alpha_Objective'
-            specific_city = city_name + '.zip'
+            specific_city = "CityData/" + city_name + '.zip'
             od_file = 'Locations/' + city_name + '/od.csv'
             loc_ = 'constrained_approach/' + city_name + '/' + city_name +  '-constrained-'
 
@@ -350,7 +350,7 @@ class SolutionImplementations():
             main_zip_loc = 'Alpha_Objective/' + city_name + '/'
             edges_file = 'Locations/' + city_name + '/edges.csv'
             new_folder = 'Alpha_Objective'
-            specific_city = city_name + '.zip'
+            specific_city = "CityData/" + city_name + '.zip'
             od_file = 'Locations/' + city_name + '/od.csv'
             loc_ = 'constrained_approach/' + city_name + '/' + city_name +  '-constrained-'
             
@@ -498,7 +498,7 @@ class SolutionImplementations():
             main_zip_loc = 'Alpha_Objective/' + city_name + '/'
             edges_file = 'Locations/' + city_name + '/edges.csv'
             new_folder = 'Alpha_Objective'
-            specific_city = city_name + '.zip'
+            specific_city = "CityData/" + city_name + '.zip'
             od_file = 'Locations/' + city_name + '/od.csv'
             loc_ = 'constrained_approach/' + city_name + '/' + city_name +  '-constrained-'
 
